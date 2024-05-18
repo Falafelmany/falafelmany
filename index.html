@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פלאפל</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl; /* Right-to-left text direction */
+      margin: 0;
+      padding: 0;
+      background-color: #1f1f1f; /* Dark background */
+      color: #fff; /* Light text */
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+      width: 100%;
+      transition: top 0.3s;
+    }
+
+    nav.sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #6ab0ff; /* Light blue link color */
+      text-decoration: none;
+      margin: 0 10px;
+      cursor: pointer; /* Pointer cursor for better UX */
+    }
+
+    .container {
+      max-width: 1000px; /* Increased max-width */
+      margin: 50px auto; /* Increased margin for spacing */
+      padding: 50px; /* Increased padding */
+      background-color: #333; /* Dark container background */
+      border-radius: 20px; /* More rounded corners */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Light shadow */
+      border: 2px solid transparent; /* Border for glow effect */
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s ease, margin 0.3s ease; /* Smooth transition */
+    }
+
+    .container:hover {
+      border-color: rgba(74, 144, 226, 0.75); /* Glow effect on hover */
+    }
+
+    .container.active {
+      transform: scale(1.2); /* Scale up the container */
+      border-color: rgba(74, 144, 226, 1); /* Stronger border glow when active */
+      z-index: 1; /* Bring the active container to the front */
+      margin-top: 30px; /* Increased margin for spacing */
+      margin-bottom: 30px; /* Increased margin for spacing */
+    }
+
+    .container.active ~ .container {
+      transform: translateY(100px); /* Move containers below down */
+    }
+
+    .container.active ~ .container + .container {
+      transform: translateY(200px); /* Move containers further down */
+    }
+
+    footer {
+      background-color: #222; /* Dark footer background */
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Email link color in dark mode */
+    a[href^="mailto"] {
+      color: #4e7eff; /* Readable blue color for email link */
+    }
+
+    /* Video container style */
+    .video-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .video-container iframe {
+      width: 30%; /* Adjust width as needed */
+    }
+
+    /* Match OriMasterGamer's channel link color with email link color */
+    .container a[href="https://www.youtube.com/@OriMasterGamer"] {
+      color: #4e7eff; /* Match the color of email link */
+    }
+
+    /* Match game links color with email link color */
+    .container a[href*="roblox.com/games"] {
+      color: #4e7eff; /* Match the color of email link */
+    }
+  </style>
+</head>
+<body>
+  
+    <header>
+        <h1>פלאפל</h1>
+    </header>
+    <nav id="navbar">
+        <a href="#about">עליי</a>
+        <a href="#videos">סרטונים</a>
+        <a href="#games" class="game-link">משחקים</a>
+        <a href="#contact">קשר</a>
+        <a href="#credits">קרדיטים</a>
+        <a href="https://www.youtube.com/channel/UCFdLU-nKltMpA-VdCPW8f0A" class="external">ערוץ פלאפל (ראשי)</a>
+        <a href="https://www.youtube.com/channel/UCbydIAw7VN6tWy7hqUG88_g" class="external">Mr. Stort (Among Us)</a>
+        <a href="https://discord.gg/t3EAvm7fG3" class="external discord-button">תכנסו לשרת דיסקורד!</a>
+    </nav>
+      
+    <div class="container" id="about">
+        <h2>עליי</h2>
+        <p>היי! אני פלאפל, אני יוטיובר מיינקראפט ויוצר משחקים ברובלוקס! יש לי גם ערוץ אמונג אס Mr. Stort (סיפור ארוך) וזהו!</p>
+    </div>
+    <div class="container" id="videos">
+        <h2>סרטונים</h2>
+        <div class="video-container">
+            <!-- Embed your YouTube videos here -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rQCU-PpqSXw?si=cu2MG8qlMksSJjfc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bF4h_1Gzz5Q?si=cl1qMzDX6nAbDwbX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HwZWwi3toF4?si=iLo3hPa-aO6sLGtn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="container" id="games">
+        <h2>משחקים</h2>
+        <p>כאן תמצאו קישורים למשחקים שאני יוצר ברובלוקס:</p>
+        <ul>
+            <li><a href="https://www.roblox.com/games/1234567890">המשחק הראשון שלי</a></li>
+            <li><a href="https://www.roblox.com/games/0987654321">המשחק השני שלי</a></li>
+            <!-- Add more game links as needed -->
+        </ul>
+    </div>
+    <div class="container" id="contact">
+        <h2>קשר</h2>
+        <p>אפשר לשלוח לי הודעה ב <a href="mailto:falafelmany123@gmail.com">falafelmany123@gmail.com</a>. נא לא לשלוח הודעות ספאם/טרול. תודה.</p>
+    </div>
+    <div class="container" id="credits">
+        <h2>קרדיטים</h2>
+        <ul>
+            <li><strong>עורך:</strong> <a href="https://www.youtube.com/@OriMasterGamer">OriMasterGamer</a></li>
+            <!-- Add more contributors as needed -->
+        </ul>
+    </div>
+    <footer>
+        &copy פלאפל
+    </footer>
+
+    <script>
+        // JavaScript to enable smooth scrolling and section scaling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Allow default behavior for external links
+                if (this.classList.contains('external')) return;
+
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                // Scroll to the target section with offset
+                const yOffset = -60; // Adjust this value as needed
+                const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: yPosition, behavior: 'smooth' });
+
+                // Highlight the target section
+                document.querySelectorAll('.container').forEach(container => {
+                    container.classList.remove('active');
+                    container.style.transform = '';
+                });
+
+                targetElement.classList.add('active');
+                adjustContainerPositions(targetElement);
+            });
+        });
+
+        document.querySelectorAll('.container').forEach(container => {
+            container.addEventListener('click', function() {
+                // Check if the clicked container is already active
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    // Reset transform for all containers
+                    document.querySelectorAll('.container').forEach(c => {
+                        c.classList.remove('active');
+                        c.style.transform = '';
+                    });
+                } else {
+                    // Remove active class from all containers
+                    document.querySelectorAll('.container').forEach(c => {
+                        c.classList.remove('active');
+                        c.style.transform = '';
+                    });
+                    // Add active class to the clicked container
+                    this.classList.add('active');
+                    adjustContainerPositions(this);
+                }
+            });
+        });
+
+        function adjustContainerPositions(activeContainer) {
+            let next = activeContainer.nextElementSibling;
+            while (next) {
+                next.style.transform = 'translateY(100px)';
+                next = next.nextElementSibling;
+            }
+            let prev = activeContainer.previousElementSibling;
+            while (prev) {
+                prev.style.transform = 'translateY(-100px)';
+                prev = prev.previousElementSibling;
+            }
+        }
+
+        // Sticky navigation bar
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            const sticky = nav.offsetTop;
+
+            if (window.pageYOffset > sticky) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        });
+    </script>
+</body>
+</html>
